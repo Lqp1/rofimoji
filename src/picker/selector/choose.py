@@ -30,7 +30,6 @@ class Choose(Selector):
         choose = run(
             parameters, input="\n".join(self.basic_format_characters(characters)), capture_output=True, encoding="utf-8"
         )
-        print(f"choose output: {choose.stdout}")
         return DEFAULT(), [self.extract_char_from_basic_output(line) for line in choose.stdout.splitlines()]
 
     def show_skin_tone_selection(
